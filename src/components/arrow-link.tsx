@@ -1,7 +1,7 @@
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import Link from "next/link";
 import type { ReactNode } from "react";
-import { Link } from "react-router";
 
 import { cn } from "@/lib/utils";
 
@@ -17,7 +17,7 @@ function ArrowLink({
 }) {
   return (
     <Link
-      to={to}
+      href={to}
       className={cn(
         "inline-flex items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 focus-ring hover:underline",
         className,

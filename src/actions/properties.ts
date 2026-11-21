@@ -3,8 +3,8 @@ import { useMemo } from "react";
 import { propertiesSeed } from "@/data/admin-seed";
 import type { Property } from "@/data/properties";
 import { createSeededStore } from "@/lib/local-store";
-import { logActivity } from "@/store/activity";
-import { getAgentFromStore } from "@/store/agents";
+import { logActivity } from "@/actions/activity";
+import { getAgentFromStore } from "@/actions/agents";
 
 export type PropertyStatus = "active" | "draft" | "sold" | "rented";
 

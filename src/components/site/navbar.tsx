@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowRight01Icon,
   Call02Icon,
@@ -5,8 +7,9 @@ import {
   Menu01Icon,
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router";
 
 import BrandLogo from "@/components/brand-logo";
 import ButtonLink from "@/components/button-link";
@@ -23,18 +26,20 @@ const { nav } = site;
 const allLinks = [...nav.primary, ...nav.secondary];
 
 function NavItemLink({ item }: { item: NavItem }) {
+  const pathname = usePathname();
+  const isActive =
+    pathname === item.to || pathname.startsWith(`${item.to}/`);
+
   return (
-    <NavLink
-      to={item.to}
-      className={({ isActive }) =>
-        cn(
-          "rounded-sm text-sm leading-none transition-colors focus-ring hover:text-primary",
-          isActive && "text-primary",
-        )
-      }
+    <Link
+      href={item.to}
+      className={cn(
+        "rounded-sm text-sm leading-none transition-colors focus-ring hover:text-primary",
+        isActive && "text-primary",
+      )}
     >
       {item.label}
-    </NavLink>
+    </Link>
   );
 }
 
@@ -53,7 +58,7 @@ function CallIcon() {
 // with large tap targets and the call button at the bottom.
 function MobileMenu() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   // Close the panel whenever the page changes (adjusting state while
   // rendering, so there's no flash of the old page behind it).
@@ -107,28 +112,31 @@ function MobileMenu() {
           className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-6"
         >
           <ul>
-            {allLinks.map((item) => (
-              <li key={item.to} className="border-b">
-                <NavLink
-                  to={item.to}
-                  className={({ isActive }) =>
-                    cn(
+            {allLinks.map((item) => {
+              const isActive =
+                pathname === item.to || pathname.startsWith(`${item.to}/`);
+              return (
+                <li key={item.to} className="border-b">
+                  <Link
+                    href={item.to}
+                    onClick={() => setOpen(false)}
+                    className={cn(
                       "group flex min-h-16 items-center justify-between gap-4 text-2xl font-medium tracking-tight transition-colors focus-ring",
                       isActive ? "text-primary" : "hover:text-primary",
-                    )
-                  }
-                >
-                  {item.label}
-                  <HugeiconsIcon
-                    icon={ArrowRight01Icon}
-                    size={20}
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                    className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
-                  />
-                </NavLink>
-              </li>
-            ))}
+                    )}
+                  >
+                    {item.label}
+                    <HugeiconsIcon
+                      icon={ArrowRight01Icon}
+                      size={20}
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                      className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                    />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import Link from "next/link";
 
 import AgentAvatar from "@/components/admin/agent-avatar";
 import PropertyActions, {
@@ -99,7 +99,7 @@ function PropertiesTable({
                     />
                     <div className="min-w-0">
                       <Link
-                        to={`/admin/properties/${p.id}/edit`}
+                        href={`/admin/properties/${p.id}/edit`}
                         className="admin-focus block max-w-56 truncate rounded-sm font-medium"
                       >
                         {p.name}

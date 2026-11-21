@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Bathtub01Icon,
   BedDoubleIcon,
@@ -5,7 +7,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon, type HugeiconsIconProps } from "@hugeicons/react";
 import { useId, type ReactNode } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import { propertyLabels as labels, type Property } from "@/data/properties";
 import { formatPrice, formatSqft } from "@/lib/format";
@@ -40,7 +42,7 @@ function PropertyCard({ property }: { property: Property }) {
 
   return (
     <Link
-      to={`/properties/${property.slug}`}
+      href={`/properties/${property.slug}`}
       aria-label={`${property.name}, ${property.city}, ${price}, ${status.toLowerCase()}`}
       aria-describedby={factsId}
       className="group block rounded-xl focus-ring"

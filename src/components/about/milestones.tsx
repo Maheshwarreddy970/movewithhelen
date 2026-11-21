@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useReducedMotion, type Variants } from "motion/react";
 
 import { aboutPage } from "@/data/about-page";

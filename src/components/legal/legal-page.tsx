@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowDown01Icon,
   ArrowUp01Icon,
@@ -6,7 +8,6 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useId, useRef } from "react";
 
-import PageMeta from "@/components/page-meta";
 import TocList from "@/components/toc-list";
 import { Button } from "@/components/ui/button";
 import { legalPage, type LegalDocument } from "@/data/legal";
@@ -43,10 +44,7 @@ function LegalPage({ doc }: { doc: LegalDocument }) {
   }
 
   return (
-    <>
-      <PageMeta title={doc.metaTitle} description={doc.description} />
-
-      <div className="page-container pt-16 pb-24 md:pt-20 md:pb-32">
+    <div className="page-container pt-16 pb-24 md:pt-20 md:pb-32">
         <header>
           <h1
             ref={headingRef}
@@ -149,7 +147,6 @@ function LegalPage({ doc }: { doc: LegalDocument }) {
           </article>
         </div>
       </div>
-    </>
   );
 }
 

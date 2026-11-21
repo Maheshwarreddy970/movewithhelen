@@ -1,5 +1,7 @@
+"use client";
+
 import { motion, useReducedMotion } from "motion/react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import AgentPhoto from "@/components/agent-photo";
 import { aboutPage } from "@/data/about-page";
@@ -22,7 +24,7 @@ function TeamPreview({ agents }: { agents: Agent[] }) {
           variants={reduceMotion ? undefined : fadeUpItem}
         >
           <Link
-            to={`/agents/${agent.slug}`}
+            href={`/agents/${agent.slug}`}
             className="group block rounded-xl focus-ring"
           >
             <AgentPhoto

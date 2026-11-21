@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ArrowUpRight01Icon,
   BeachIcon,
@@ -12,7 +14,7 @@ import {
 import { HugeiconsIcon } from "@hugeicons/react";
 import { motion, useReducedMotion } from "motion/react";
 import { useId } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import SectionHeader from "@/components/section-header";
 import {
@@ -39,7 +41,7 @@ function TypeCard({ type }: { type: PropertyTypeItem }) {
 
   return (
     <Link
-      to={type.href ?? `/properties?type=${type.slug}`}
+      href={type.href ?? `/properties?type=${type.slug}`}
       aria-label={`${type.name}, ${count}`}
       className="group flex h-full min-h-45 flex-col justify-between rounded-xl border border-border bg-background p-5 transition-colors duration-300 focus-ring hover:border-primary hover:bg-primary hover:text-primary-foreground focus-visible:ring-offset-muted md:p-6"
     >

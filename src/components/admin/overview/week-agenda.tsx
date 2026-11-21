@@ -1,6 +1,6 @@
 import { ArrowRight01Icon } from "@hugeicons/core-free-icons";
 import { useState } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import Icon from "@/components/admin/icon";
 import { TourStatusPill } from "@/components/admin/status-pill";
@@ -105,7 +105,7 @@ function WeekAgenda({
               return (
                 <li key={tour.id} className="border-b border-border">
                   <Link
-                    to={`/admin/tours?tour=${tour.id}`}
+                    href={`/admin/tours?tour=${tour.id}`}
                     className="admin-focus group flex items-center gap-4 rounded-sm py-3 transition-colors hover:bg-subtle"
                   >
                     <span className="w-18 shrink-0 font-medium whitespace-nowrap tabular-nums">

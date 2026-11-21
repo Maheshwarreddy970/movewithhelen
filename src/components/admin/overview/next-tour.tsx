@@ -3,7 +3,7 @@ import {
   Call02Icon,
   Mail01Icon,
 } from "@hugeicons/core-free-icons";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import Icon from "@/components/admin/icon";
 import { TourStatusPill } from "@/components/admin/status-pill";
@@ -89,7 +89,7 @@ function NextTour({
             <Button onClick={() => onConfirm(tour)}>{copy.confirm}</Button>
           )}
           <Link
-            to={`/admin/tours?tour=${tour.id}`}
+            href={`/admin/tours?tour=${tour.id}`}
             className="admin-focus inline-flex h-9 items-center gap-1.5 rounded-[10px] border border-border px-3 transition-colors hover:bg-subtle"
           >
             {copy.open}

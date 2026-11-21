@@ -1,7 +1,9 @@
+"use client";
+
 import { ArrowRight01Icon, Cancel01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
+import Link from "next/link";
 import { useState } from "react";
-import { Link } from "react-router";
 
 import { site } from "@/data/site";
 
@@ -31,7 +33,7 @@ function AnnouncementBar() {
         <p>
           <span className="hidden sm:inline">{copy.text} </span>
           <Link
-            to={copy.link.to}
+            href={copy.link.to}
             className="inline-flex items-center gap-1 rounded-sm font-medium underline underline-offset-4 outline-none focus-visible:ring-2 focus-visible:ring-primary-foreground"
           >
             {copy.link.label}

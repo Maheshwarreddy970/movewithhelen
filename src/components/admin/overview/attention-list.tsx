@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import Link from "next/link";
 
 import { overviewPage } from "@/data/admin";
 import { dayLabel, relativeTime } from "@/lib/admin-format";
@@ -33,7 +33,7 @@ function Group({
       <ul className="border-t border-border">{children}</ul>
       {more.n > 0 && (
         <Link
-          to={more.to}
+          href={more.to}
           className="admin-focus mt-2 inline-block rounded-sm text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
         >
           {copy.more(more.n)}
@@ -86,7 +86,7 @@ function AttentionList({
               >
                 <div className="min-w-0 flex-1">
                   <Link
-                    to={`/admin/tours?tour=${tour.id}`}
+                    href={`/admin/tours?tour=${tour.id}`}
                     className="admin-focus block truncate rounded-sm font-medium after:absolute after:inset-0"
                   >
                     {tour.name}
@@ -135,7 +135,7 @@ function AttentionList({
               <div className="min-w-0 flex-1">
                 <p className="flex items-baseline gap-2">
                   <Link
-                    to={`/admin/messages?id=${m.id}`}
+                    href={`/admin/messages?id=${m.id}`}
                     className="admin-focus min-w-0 flex-1 truncate rounded-sm font-medium after:absolute after:inset-0"
                   >
                     {m.name}

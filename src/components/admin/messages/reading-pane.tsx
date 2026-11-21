@@ -9,7 +9,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import type { HugeiconsIconProps } from "@hugeicons/react";
 import { useId, type ReactNode } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import AgentAvatar from "@/components/admin/agent-avatar";
 import CopyButton from "@/components/admin/copy-button";
@@ -163,7 +163,7 @@ function ReadingPane({
             {agent && (
               <Detail label={r.agent}>
                 <Link
-                  to={`/admin/agents?edit=${agent.id}`}
+                  href={`/admin/agents?edit=${agent.id}`}
                   className="admin-focus inline-flex items-center gap-2 rounded-sm underline-offset-4 hover:underline"
                 >
                   <AgentAvatar agent={agent} />

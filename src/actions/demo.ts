@@ -1,8 +1,8 @@
-import { resetActivity } from "@/store/activity";
-import { resetAgents } from "@/store/agents";
-import { resetMessages } from "@/store/messages";
-import { resetProperties } from "@/store/properties";
-import { resetRequests } from "@/store/requests";
+import { resetActivity } from "@/actions/activity";
+import { resetAgents } from "@/actions/agents";
+import { resetMessages } from "@/actions/messages";
+import { resetProperties } from "@/actions/properties";
+import { resetRequests } from "@/actions/requests";
 
 // Restores every dashboard store to its seed data.
 export function resetDemoData() {

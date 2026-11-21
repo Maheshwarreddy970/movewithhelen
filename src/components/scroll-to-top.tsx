@@ -1,10 +1,12 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { useLayoutEffect } from "react";
-import { useLocation } from "react-router";
 
 // Start each new page at the top. Filter changes (search params) and hash
 // links keep their position.
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });

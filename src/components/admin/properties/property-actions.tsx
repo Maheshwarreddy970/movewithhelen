@@ -5,7 +5,7 @@ import {
   Edit02Icon,
   MoreHorizontalIcon,
 } from "@hugeicons/core-free-icons";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import Icon from "@/components/admin/icon";
 import {
@@ -55,7 +55,7 @@ function PropertyActions({
         </a>
       )}
       <Link
-        to={`/admin/properties/${property.id}/edit`}
+        href={`/admin/properties/${property.id}/edit`}
         aria-label={`${copy.edit}: ${property.name}`}
         title={copy.edit}
         className={iconButton}

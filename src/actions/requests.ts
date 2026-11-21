@@ -1,8 +1,8 @@
 import { requestsSeed } from "@/data/admin-seed";
 import { createSeededStore } from "@/lib/local-store";
-import { logActivity } from "@/store/activity";
-import { getAgentFromStore } from "@/store/agents";
-import { getPropertyById } from "@/store/properties";
+import { logActivity } from "@/actions/activity";
+import { getAgentFromStore } from "@/actions/agents";
+import { getPropertyById } from "@/actions/properties";
 
 export type TourType = "in-person" | "video";
 

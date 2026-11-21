@@ -1,6 +1,8 @@
+"use client";
+
 import { motion, useReducedMotion } from "motion/react";
 import { useId } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import ArrowLink from "@/components/arrow-link";
 import SectionHeader from "@/components/section-header";
@@ -14,7 +16,7 @@ import { usePublicProperties } from "@/store/properties";
 function FeaturedCard({ property }: { property: Property }) {
   return (
     <Link
-      to={`/properties/${property.slug}`}
+      href={`/properties/${property.slug}`}
       aria-label={`${property.name}, ${property.city}`}
       className="group block rounded-xl focus-ring"
     >

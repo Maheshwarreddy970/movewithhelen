@@ -1,8 +1,10 @@
+"use client";
+
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { motion, useReducedMotion } from "motion/react";
 import { useId, useState } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import ArrowLink from "@/components/arrow-link";
 import SectionHeader from "@/components/section-header";
@@ -57,7 +59,7 @@ function CityRow({
 }) {
   return (
     <Link
-      to={`/neighborhoods/${city.slug}`}
+      href={`/neighborhoods/${city.slug}`}
       onMouseEnter={() => onActivate(city.county)}
       onMouseLeave={() => onActivate(null)}
       onFocus={() => onActivate(city.county)}

@@ -1,4 +1,6 @@
-import { useLocation } from "react-router";
+"use client";
+
+import { usePathname } from "next/navigation";
 
 import { absoluteUrl, pageTitle, site } from "@/data/site";
 import type { JsonLd } from "@/lib/structured-data";
@@ -34,7 +36,7 @@ function PageMeta({
   noindex?: boolean;
   jsonLd?: JsonLd | JsonLd[];
 }) {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const description = clampDescription(rawDescription);
   const resolvedTitle = fullTitle ?? pageTitle(title);
   const url = absoluteUrl(pathname);

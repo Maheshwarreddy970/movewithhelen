@@ -1,7 +1,7 @@
 import { messagesSeed } from "@/data/admin-seed";
 import { createSeededStore } from "@/lib/local-store";
-import { logActivity } from "@/store/activity";
-import type { Note } from "@/store/requests";
+import { logActivity } from "@/actions/activity";
+import type { Note } from "@/actions/requests";
 
 export type MessageType = "general" | "tour" | "agent-match" | "agent-contact";
 

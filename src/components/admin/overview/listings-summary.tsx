@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import Link from "next/link";
 
 import { overviewPage, statusLabels } from "@/data/admin";
 import { cn } from "@/lib/utils";
@@ -50,7 +50,7 @@ function ListingsSummary({ homes }: { homes: ListedProperty[] }) {
         {byStatus.map((s, i) => (
           <li key={s.status} className={cn(i > 0 && "border-l border-border")}>
             <Link
-              to={`/admin/properties?status=${s.status}`}
+              href={`/admin/properties?status=${s.status}`}
               className={cn(
                 "admin-focus block px-3 py-3 transition-colors hover:bg-subtle",
                 i === 0 && "pl-0",
@@ -76,7 +76,7 @@ function ListingsSummary({ homes }: { homes: ListedProperty[] }) {
         {cities.map((c) => (
           <li key={c.city}>
             <Link
-              to={`/admin/properties?city=${encodeURIComponent(c.city)}`}
+              href={`/admin/properties?city=${encodeURIComponent(c.city)}`}
               className="admin-focus grid grid-cols-[minmax(0,8rem)_1fr_auto] items-center gap-4 rounded-sm py-2 transition-colors hover:bg-subtle"
             >
               <span className="truncate">{c.city}</span>

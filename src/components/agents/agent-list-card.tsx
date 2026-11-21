@@ -1,6 +1,6 @@
 import { Call02Icon, Location01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import AgentPhoto from "@/components/agent-photo";
 import { buttonVariants } from "@/components/ui/button";
@@ -24,7 +24,7 @@ function AgentListCard({ agent }: { agent: Agent }) {
       <div className="flex min-w-0 flex-1 flex-col">
         <h2 className="type-subheading">
           <Link
-            to={profile}
+            href={profile}
             aria-label={copy.cardLabel(agent.name, agent.title, agent.areas)}
             className="rounded-sm outline-none after:absolute after:inset-0 after:rounded-2xl focus-visible:after:ring-2 focus-visible:after:ring-ring focus-visible:after:ring-offset-2"
           >
@@ -65,7 +65,7 @@ function AgentListCard({ agent }: { agent: Agent }) {
         {/* Sits above the stretched link so it stays clickable. */}
         <div className="relative z-10 mt-auto flex gap-2 pt-6">
           <Link
-            to={profile}
+            href={profile}
             tabIndex={-1}
             aria-hidden="true"
             className={cn(buttonVariants({ size: "lg" }), "flex-1")}

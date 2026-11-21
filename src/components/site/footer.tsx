@@ -1,8 +1,10 @@
+"use client";
+
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { motion, useReducedMotion, type MotionProps } from "motion/react";
+import Link from "next/link";
 import { useId, useState, type FormEvent } from "react";
-import { Link } from "react-router";
 
 import BrandLogo from "@/components/brand-logo";
 import ButtonLink from "@/components/button-link";
@@ -42,7 +44,7 @@ function SmartLink({
     );
   }
   return (
-    <Link to={link.href} className={className}>
+    <Link href={link.href} className={className}>
       {link.label}
     </Link>
   );

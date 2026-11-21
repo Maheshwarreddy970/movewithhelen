@@ -1,6 +1,8 @@
+"use client";
+
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import { articlesSection as copy, type Article } from "@/data/articles";
 import { formatDate } from "@/lib/format";
@@ -9,7 +11,7 @@ import { formatDate } from "@/lib/format";
 function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
-      to={`/guides/${article.slug}`}
+      href={`/guides/${article.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-background focus-ring"
     >
       <div className="flex flex-1 flex-col p-7">

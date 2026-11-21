@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Add01Icon,
   Building03Icon,
@@ -5,7 +7,7 @@ import {
   Mail01Icon,
   Refresh01Icon,
 } from "@hugeicons/core-free-icons";
-import { useNavigate } from "react-router";
+import { useRouter } from "next/navigation";
 
 import Icon from "@/components/admin/icon";
 import {
@@ -33,7 +35,7 @@ function CommandPalette({
   onOpenChange: (open: boolean) => void;
   onReset: () => void;
 }) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const homes = useAllProperties();
   const tours = useRequests();
   const messages = useMessages();
@@ -41,7 +43,7 @@ function CommandPalette({
 
   function go(to: string) {
     onOpenChange(false);
-    navigate(to);
+    router.push(to);
   }
 
   return (

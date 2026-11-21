@@ -1,6 +1,6 @@
 import { agents as agentSeed, type Agent } from "@/data/agents";
 import { createSeededStore } from "@/lib/local-store";
-import { logActivity } from "@/store/activity";
+import { logActivity } from "@/actions/activity";
 
 const store = createSeededStore<Agent[]>("movewithhelen-agents", 1, () => agentSeed);
 

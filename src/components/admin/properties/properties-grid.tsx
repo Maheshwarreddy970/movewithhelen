@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import Link from "next/link";
 
 import PropertyActions, {
   type PropertyActionHandlers,
@@ -35,7 +35,7 @@ function PropertiesGrid({
           </div>
           <div className="mt-4 flex items-baseline justify-between gap-4">
             <Link
-              to={`/admin/properties/${p.id}/edit`}
+              href={`/admin/properties/${p.id}/edit`}
               className="admin-focus truncate rounded-sm text-[15px] font-semibold"
             >
               {p.name}

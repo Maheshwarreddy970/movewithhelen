@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import Link from "next/link";
 
 import { neighborhoodsPage as copy } from "@/data/pages";
 import type { Neighborhood } from "@/data/neighborhoods";
@@ -16,7 +16,7 @@ function NeighborhoodCard({
 
   return (
     <Link
-      to={`/neighborhoods/${neighborhood.slug}`}
+      href={`/neighborhoods/${neighborhood.slug}`}
       className="group block rounded-2xl focus-ring"
     >
       <div

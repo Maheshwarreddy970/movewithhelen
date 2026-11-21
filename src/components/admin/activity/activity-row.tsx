@@ -5,7 +5,7 @@ import {
   UserGroupIcon,
 } from "@hugeicons/core-free-icons";
 import type { HugeiconsIconProps } from "@hugeicons/react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import Icon from "@/components/admin/icon";
 import { activityPage as copy } from "@/data/admin-activity";
@@ -26,7 +26,7 @@ function ActivityRow({ event, now }: { event: ActivityEvent; now: number }) {
   return (
     <li className="border-b border-border last:border-b-0">
       <Link
-        to={entityHref(event)}
+        href={entityHref(event)}
         className="admin-focus group flex items-start gap-3 rounded-sm px-1 py-3.5 transition-colors hover:bg-subtle sm:items-center"
       >
         <Icon

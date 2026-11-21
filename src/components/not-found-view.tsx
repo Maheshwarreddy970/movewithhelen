@@ -1,7 +1,7 @@
 import { Home01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { motion, useReducedMotion } from "motion/react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import ButtonLink from "@/components/button-link";
 import PageMeta from "@/components/page-meta";
@@ -65,7 +65,7 @@ function NotFoundView({
                 <li key={link.to} className="flex items-center gap-2">
                   {i > 0 && <span aria-hidden="true">·</span>}
                   <Link
-                    to={link.to}
+                    href={link.to}
                     className="rounded-sm underline-offset-4 focus-ring hover:text-foreground hover:underline"
                   >
                     {link.label}

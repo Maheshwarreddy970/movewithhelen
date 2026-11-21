@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity01Icon,
   ArrowUpRight01Icon,
@@ -12,7 +14,8 @@ import {
   UserGroupIcon,
 } from "@hugeicons/core-free-icons";
 import type { HugeiconsIconProps } from "@hugeicons/react";
-import { NavLink } from "react-router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import Icon from "@/components/admin/icon";
 // import LogoMark from "@/components/logo-mark";
@@ -79,6 +82,7 @@ function AdminSidebar({
   onShortcuts: () => void;
   onSignOut: () => void;
 }) {
+  const pathname = usePathname();
   const { newTours, unread } = useAdminCounts();
   const counts: Partial<Record<AdminNavKey, { n: number; label: string }>> = {
     tours: { n: newTours, label: copy.newLabel(newTours) },
@@ -96,7 +100,7 @@ function AdminSidebar({
       >
         {!collapsed && (
           <span className="flex items-center gap-2">
-              {/* <LogoMark aria-hidden="true" className="size-6" /> */}
+            {/* <LogoMark aria-hidden="true" className="size-6" /> */}
             <span className="font-semibold tracking-tight">{copy.brand}</span>
             <span className="admin-meta">{copy.brandMeta}</span>
           </span>
@@ -121,27 +125,28 @@ function AdminSidebar({
         <ul className="flex flex-col gap-0.5">
           {copy.nav.map((item) => {
             const count = counts[item.key];
+            const isActive =
+              item.key === "overview"
+                ? pathname === item.to
+                : pathname === item.to || pathname.startsWith(`${item.to}/`);
             return (
               <li key={item.key}>
                 <WithTooltip label={item.label} enabled={collapsed}>
-                  <NavLink
-                    to={item.to}
-                    end={item.key === "overview"}
+                  <Link
+                    href={item.to}
                     onClick={onNavigate}
                     aria-label={
                       collapsed && count?.n
                         ? `${item.label}, ${count.label}`
                         : undefined
                     }
-                    className={({ isActive }) =>
-                      cn(
-                        "admin-focus relative flex h-9 items-center gap-3 rounded-lg text-sm transition-colors",
-                        collapsed ? "justify-center" : "px-3",
-                        isActive
-                          ? "bg-muted text-foreground"
-                          : "text-muted-foreground hover:bg-subtle hover:text-foreground",
-                      )
-                    }
+                    className={cn(
+                      "admin-focus relative flex h-9 items-center gap-3 rounded-lg text-sm transition-colors",
+                      collapsed ? "justify-center" : "px-3",
+                      isActive
+                        ? "bg-muted text-foreground"
+                        : "text-muted-foreground hover:bg-subtle hover:text-foreground",
+                    )}
                   >
                     <Icon icon={icons[item.key]} />
                     {!collapsed && <span className="flex-1">{item.label}</span>}
@@ -166,7 +171,7 @@ function AdminSidebar({
                         )}
                       </span>
                     )}
-                  </NavLink>
+                  </Link>
                 </WithTooltip>
               </li>
             );

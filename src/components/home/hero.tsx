@@ -1,3 +1,5 @@
+"use client";
+
 import { motion, useReducedMotion, type MotionProps } from "motion/react";
 import { useId } from "react";
 

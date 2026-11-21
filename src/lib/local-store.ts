@@ -59,12 +59,14 @@ export function createSeededStore<T>(
   const store = createLocalStore<T>(`${key}-v${version}`, seed());
 
   // Save the seed on first visit so relative dates stay fixed afterwards.
-  try {
-    if (window.localStorage.getItem(`${key}-v${version}`) === null) {
-      store.write(store.read());
+  if (typeof window !== "undefined") {
+    try {
+      if (window.localStorage.getItem(`${key}-v${version}`) === null) {
+        store.write(store.read());
+      }
+    } catch {
+      // Storage blocked: the in-memory seed still works for this visit.
     }
-  } catch {
-    // Storage blocked: the in-memory seed still works for this visit.
   }
 
   return { ...store, reset: () => store.write(seed()) };

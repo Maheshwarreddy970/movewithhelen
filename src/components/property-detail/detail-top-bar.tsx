@@ -1,6 +1,6 @@
 import { FavouriteIcon, Share08Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import {
   Breadcrumb,
@@ -35,7 +35,7 @@ function DetailTopBar({ property }: { property: Property }) {
       <Breadcrumb aria-label={copy.breadcrumbLabel}>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink render={<Link to="/properties" />}>
+            <BreadcrumbLink render={<Link href="/properties" />}>
               {copy.breadcrumbRoot}
             </BreadcrumbLink>
           </BreadcrumbItem>
@@ -43,7 +43,7 @@ function DetailTopBar({ property }: { property: Property }) {
           <BreadcrumbItem>
             <BreadcrumbLink
               render={
-                <Link to={`/properties?location=${toSlug(property.city)}`} />
+                <Link href={`/properties?location=${toSlug(property.city)}`} />
               }
             >
               {property.city}

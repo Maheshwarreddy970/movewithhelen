@@ -5,7 +5,7 @@ import {
 } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useState } from "react";
-import { Link } from "react-router";
+import Link from "next/link";
 
 import {
   Table,
@@ -196,7 +196,7 @@ function CompareTable({ neighborhoods }: { neighborhoods: Neighborhood[] }) {
               <TableRow key={n.slug}>
                 <TableCell>
                   <Link
-                    to={`/neighborhoods/${n.slug}`}
+                    href={`/neighborhoods/${n.slug}`}
                     className="rounded-sm font-medium underline-offset-4 focus-ring hover:underline"
                   >
                     {n.name}
@@ -224,7 +224,7 @@ function CompareTable({ neighborhoods }: { neighborhoods: Neighborhood[] }) {
         {neighborhoods.map((n) => (
           <li key={n.slug} className="rounded-xl border border-border p-5">
             <Link
-              to={`/neighborhoods/${n.slug}`}
+              href={`/neighborhoods/${n.slug}`}
               className="rounded-sm type-title focus-ring"
             >
               {n.name}
