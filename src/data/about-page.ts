@@ -49,7 +49,7 @@ export const aboutPage = {
       { value: 1, suffix: "%", label: "Seller listing commission" },
       { value: 5000, suffix: "", label: "Up to $5,000 buyer cash-back" },
       { value: 4, suffix: "", label: "Ontario regions served" },
-    ] satisfies AboutStat[],
+    ] as AboutStat[],
   },
 
   values: {

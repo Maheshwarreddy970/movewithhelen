@@ -203,7 +203,7 @@ export function toFormValues(p: ListedProperty): PropertyFormValues {
     deposit: str(p.deposit),
     leaseTerm: p.leaseTerm ?? "",
     availableFrom: p.availableFrom ?? "",
-    floodZone: p.floodZone,
+    floodZone: p.floodZone ?? "X",
     description: p.description.join("\n\n"),
     photos: p.photos,
     features,

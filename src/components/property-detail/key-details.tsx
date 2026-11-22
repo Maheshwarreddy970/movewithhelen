@@ -8,7 +8,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { propertyDetailPage } from "@/data/pages";
-import type { Property } from "@/data/properties";
+import type { FloodZone as FloodZoneId, Property } from "@/data/properties";
 import { daysSince, formatLongDate } from "@/lib/dates";
 import { formatPrice, formatSqft } from "@/lib/format";
 
@@ -20,7 +20,7 @@ function money(amount: number) {
   return formatPrice(amount, "sale");
 }
 
-function FloodZone({ zone }: { zone: Property["floodZone"] }) {
+function FloodZone({ zone }: { zone: FloodZoneId }) {
   return (
     <span className="inline-flex items-center gap-1.5">
       {copy.zone(zone)}
@@ -83,11 +83,14 @@ function KeyDetails({ property }: { property: Property }) {
     }
   }
 
-  rows.push(
-    {
+  if (property.floodZone) {
+    rows.push({
       label: copy.floodZone,
       value: <FloodZone zone={property.floodZone} />,
-    },
+    });
+  }
+
+  rows.push(
     { label: copy.listed, value: copy.listedAgo(daysSince(property.listedAt)) },
     { label: copy.activity, value: copy.views(property.views, property.saves) },
   );
