@@ -1,42 +1,40 @@
-// Fictional data for demo purposes only.
-
+import { mlsLinks } from "@/data/mls-links";
 import { DEFAULT_SITE_URL } from "@/data/site-url";
 
-export type NavItem = { label: string; to: string };
+export type NavItem = { label: string; to: string; external?: boolean };
 
-// Where the site is deployed, without a trailing slash. Set NEXT_PUBLIC_SITE_URL
-// in .env; canonical links, social cards, and the sitemap use it.
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ||
   process.env.VITE_SITE_URL ||
   DEFAULT_SITE_URL
 ).replace(/\/+$/, "");
 
-// Brand and navigation shared by the navbar and footer.
 export const site = {
-  name: "movewith helen",
+  name: "MoveWithHelen",
   url: siteUrl,
-  tagline: "Find the home that fits the way you live.",
+  tagline:
+    "Full-service Ontario real estate at 1% listing commission & up to $5,000 buyer cash-back.",
   description:
-    "movewithhelen helps you buy, sell, and rent beach homes, condos, and family houses across Florida's Gulf Coast.",
-  homeLabel: "movewithhelen home",
-  // Search engines and social cards.
+    "Work with Helen Everett, Sales Representative at Keller Williams Referred Urban Realty, for 1% listing commission and up to $5,000 buyer cash-back across Oakville, Burlington, Hamilton, and Niagara.",
+  homeLabel: "MoveWithHelen home",
   seo: {
-    homeTitle: "movewithhelen | Homes for sale and rent on Florida's Gulf Coast",
-    locale: "en_US",
+    homeTitle:
+      "MoveWithHelen | 1% Listing Commission & Buyer Cash-Back — Oakville, Burlington, Hamilton & Niagara",
+    locale: "en_CA",
     ogImage: "/og-image.png",
-    ogImageAlt: "movewithhelen, homes on Florida's Gulf Coast",
+    ogImageAlt:
+      "MoveWithHelen — Helen Everett, Keller Williams Referred Urban Realty",
     logo: "/icon-1024.png",
     themeColor: "#ffffff",
-    email: "hello@movewithhelen.example.com",
-    phone: "+1-727-555-0148",
-    region: "FL",
-    country: "US",
+    email: "helen.everett@kw.com",
+    phone: "+1-647-702-0046",
+    region: "ON",
+    country: "CA",
   },
   announcement: {
-    label: "Announcement",
-    text: "New: see tour requests and messages in one place.",
-    link: { label: "Explore the admin dashboard", to: "/admin" },
+    label: "Special Offer",
+    text: "Sell for just 1% listing commission or get up to $5,000 buyer cash-back.",
+    link: { label: "Claim your offer", to: "/contact" },
     dismiss: "Dismiss announcement",
   },
   skipLink: "Skip to content",
@@ -45,25 +43,23 @@ export const site = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     menuTitle: "Menu",
-    contactTitle: "Talk to us",
+    contactTitle: "Talk to Helen",
     primary: [
-      { label: "Properties", to: "/properties" },
-      { label: "Neighborhoods", to: "/neighborhoods" },
-      { label: "About", to: "/about" },
-      { label: "Agents", to: "/agents" },
+      { label: "Search MLS", to: mlsLinks.allSale, external: true },
+      { label: "Featured Listings", to: "/properties" },
+      { label: "Areas", to: "/neighborhoods" },
+      { label: "About Helen", to: "/about" },
     ] satisfies NavItem[],
     secondary: [{ label: "Contact", to: "/contact" }] satisfies NavItem[],
     cta: { label: "Book a call", to: "/contact" } satisfies NavItem,
   },
 };
 
-// "/properties" → "https://movewithhelen.example.com/properties"
 export function absoluteUrl(path: string) {
   if (/^https?:\/\//.test(path)) return path;
   return `${site.url}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-// "Homes for sale and rent" → "Homes for sale and rent | movewithhelen"
 export function pageTitle(title?: string) {
   return title ? `${title} | ${site.name}` : site.name;
 }

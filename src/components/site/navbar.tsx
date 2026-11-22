@@ -2,6 +2,7 @@
 
 import {
   ArrowRight01Icon,
+  ArrowUpRight01Icon,
   Call02Icon,
   Cancel01Icon,
   Menu01Icon,
@@ -28,7 +29,27 @@ const allLinks = [...nav.primary, ...nav.secondary];
 function NavItemLink({ item }: { item: NavItem }) {
   const pathname = usePathname();
   const isActive =
-    pathname === item.to || pathname.startsWith(`${item.to}/`);
+    !("external" in item && item.external) &&
+    (pathname === item.to || pathname.startsWith(`${item.to}/`));
+
+  if ("external" in item && item.external) {
+    return (
+      <a
+        href={item.to}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 rounded-sm text-sm leading-none transition-colors focus-ring hover:text-primary"
+      >
+        {item.label}
+        <HugeiconsIcon
+          icon={ArrowUpRight01Icon}
+          size={14}
+          strokeWidth={1.75}
+          aria-hidden="true"
+        />
+      </a>
+    );
+  }
 
   return (
     <Link
@@ -54,14 +75,10 @@ function CallIcon() {
   );
 }
 
-// Phones and tablets: every link in a panel that slides in from the right,
-// with large tap targets and the call button at the bottom.
 function MobileMenu() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  // Close the panel whenever the page changes (adjusting state while
-  // rendering, so there's no flash of the old page behind it).
   const [lastPath, setLastPath] = useState(pathname);
   if (pathname !== lastPath) {
     setLastPath(pathname);
@@ -114,26 +131,47 @@ function MobileMenu() {
           <ul>
             {allLinks.map((item) => {
               const isActive =
-                pathname === item.to || pathname.startsWith(`${item.to}/`);
+                !("external" in item && item.external) &&
+                (pathname === item.to || pathname.startsWith(`${item.to}/`));
+
               return (
                 <li key={item.to} className="border-b">
-                  <Link
-                    href={item.to}
-                    onClick={() => setOpen(false)}
-                    className={cn(
-                      "group flex min-h-16 items-center justify-between gap-4 text-2xl font-medium tracking-tight transition-colors focus-ring",
-                      isActive ? "text-primary" : "hover:text-primary",
-                    )}
-                  >
-                    {item.label}
-                    <HugeiconsIcon
-                      icon={ArrowRight01Icon}
-                      size={20}
-                      strokeWidth={1.5}
-                      aria-hidden="true"
-                      className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
-                    />
-                  </Link>
+                  {"external" in item && item.external ? (
+                    <a
+                      href={item.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setOpen(false)}
+                      className="group flex min-h-16 items-center justify-between gap-4 text-2xl font-medium tracking-tight transition-colors focus-ring hover:text-primary"
+                    >
+                      {item.label}
+                      <HugeiconsIcon
+                        icon={ArrowUpRight01Icon}
+                        size={20}
+                        strokeWidth={1.5}
+                        aria-hidden="true"
+                        className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary"
+                      />
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.to}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "group flex min-h-16 items-center justify-between gap-4 text-2xl font-medium tracking-tight transition-colors focus-ring",
+                        isActive ? "text-primary" : "hover:text-primary",
+                      )}
+                    >
+                      {item.label}
+                      <HugeiconsIcon
+                        icon={ArrowRight01Icon}
+                        size={20}
+                        strokeWidth={1.5}
+                        aria-hidden="true"
+                        className="text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
+                      />
+                    </Link>
+                  )}
                 </li>
               );
             })}
@@ -155,7 +193,6 @@ function MobileMenu() {
 function Navbar() {
   return (
     <header className="border-b">
-      {/* Desktop: links left, logo centered, contact and call right */}
       <nav
         aria-label={nav.label}
         className="page-container hidden h-16 grid-cols-[1fr_auto_1fr] items-center gap-8 lg:grid"
@@ -179,7 +216,6 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Phones and tablets: logo, call button, and the menu */}
       <div className="page-container flex h-16 items-center justify-between gap-3 lg:hidden">
         <BrandLogo className="focus-ring" />
         <div className="flex items-center gap-2">

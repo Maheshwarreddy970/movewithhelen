@@ -1,5 +1,3 @@
-// Fictional data for demo purposes only.
-
 export type AboutIcon = "home" | "chart";
 
 export type AboutFeature = {
@@ -26,32 +24,30 @@ type AboutContent = {
   stats: AboutStat[];
 };
 
-// Placeholder photo until /images/about/about-main.webp exists. Alt text
-// describes the placeholder.
 export const about: AboutContent = {
-  label: "About Move With Helen",
+  label: "About Helen Everett",
   heading: "14 Years of Real Estate Experience",
   subtext:
-    "Providing residential buyers and sellers with professional representation and a smarter approach to real estate fees across Oakville, Burlington, and Hamilton.",
+    "Starting her career as a Deals Administrator before becoming a Sales Representative with Keller Williams Referred Urban Realty, Helen brings deep contract and closing expertise across Oakville, Burlington, Hamilton, and Niagara.",
   features: [
     {
       id: "sell",
       icon: "home",
-      title: "1% Listing Commission",
-      text: "Get a comparative market analysis, professional photography, MLS exposure, and expert negotiation while keeping more of your money.",
+      title: "1% Seller Listing Commission",
+      text: "Full-service marketing, comparative market analysis, professional photography, live MLS exposure, and skilled negotiation—while keeping thousands more in your pocket.",
     },
     {
       id: "buy",
       icon: "chart",
-      title: "Buyer Cashback Program",
-      text: "Receive up to $5,000 or more in cash back when you purchase a home with Helen, making your move even smarter.",
+      title: "Up to $5,000 Buyer Cash-Back",
+      text: "Receive up to $5,000 in cash back when you purchase your next home with Helen across Oakville, Burlington, Hamilton, or Niagara.",
     },
   ],
   mainImage: "/images/hero-desktop.jpg",
-  mainImageAlt: "Helen Everett, experienced full-service Realtor",
+  mainImageAlt: "Helen Everett, Sales Representative at Keller Williams Referred Urban Realty",
   stats: [
-    { value: 1, suffix: "%", label: "Listing commission" },
-    { value: 5000, suffix: "+", label: "Potential buyer cashback" },
-    { value: 14, suffix: "+", label: "Years of real estate experience" },
+    { value: 1, suffix: "%", label: "Seller listing commission" },
+    { value: 5000, suffix: "", label: "Up to $5,000 buyer cash-back" },
+    { value: 14, suffix: "+", label: "Years in Ontario real estate" },
   ],
 };

@@ -8,6 +8,8 @@ import HeroImage from "@/components/home/hero-image";
 // import LogoMark from "@/components/logo-mark";
 import { hero } from "@/data/hero";
 import { DURATION, EASE, STAGGER } from "@/lib/motion";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 
 // Entrance timeline (seconds).
 const LINE_STAGGER = STAGGER;
@@ -71,14 +73,27 @@ function Hero() {
             {hero.subtext}
           </motion.p>
 
-          <motion.div
+         <motion.div
             {...fadeUp(AFTER_HEADLINE)}
-            className="lg:col-start-1 lg:row-start-2 lg:mt-10"
+            className="flex flex-col gap-3 sm:flex-row sm:items-center lg:col-start-1 lg:row-start-2 lg:mt-10"
           >
-            <ButtonLink to={hero.primaryCta.to} className="w-full md:w-auto">
+            <ButtonLink to={hero.primaryCta.to} className="w-full sm:w-auto">
               {hero.primaryCta.label}
-                {/* <LogoMark aria-hidden="true" data-icon="inline-end" /> */}
             </ButtonLink>
+            <a
+              href={hero.secondaryCta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-lg border border-border bg-background px-5 text-sm font-medium transition-colors focus-ring hover:bg-muted sm:w-auto"
+            >
+              {hero.secondaryCta.label}
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                size={16}
+                strokeWidth={1.75}
+                aria-hidden="true"
+              />
+            </a>
           </motion.div>
         </div>
       </div>

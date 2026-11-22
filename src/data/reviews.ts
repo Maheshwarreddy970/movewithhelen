@@ -1,4 +1,4 @@
-// Fictional data for demo purposes only.
+// Placeholder Ontario reviews — replace with Helen's verified client reviews when received.
 
 export type Review = {
   id: string;
@@ -18,80 +18,66 @@ export type ReviewStat = {
   label: string;
 };
 
-// Placeholder photos until the client photos exist (planned paths:
-// /images/reviews/<surname>.webp). Alt text describes the placeholder.
 export const reviews: Review[] = [
   {
-    id: "shah",
+    id: "oakville-seller",
     quote:
-      "We told movewithhelen what mattered, a yard for the kids and a short drive to the beach, and they found it in two weekends. No pressure, just honest advice.",
-    name: "Jordan and Priya Shah",
-    action: "Bought",
-    city: "Clearwater",
-    homeType: "Family home",
-    photo: "/images/hero-desktop.jpg",
-    photoAlt: "Bright open living room leading onto a sunny deck by the sea",
-    rating: 5,
-  },
-  {
-    id: "ellison",
-    quote:
-      "They priced my condo right from day one. Three showings, two offers, and closed a week early. I didn't have to chase anyone for updates.",
-    name: "Mark Ellison",
+      "Helen sold our home in Oakville for full value and saved us over $18,000 with her 1% listing commission. Her background in deals administration showed in every single detail of the closing.",
+    name: "David & Sarah M.",
     action: "Sold",
-    city: "St. Petersburg",
-    homeType: "Condo",
-    photo: "/images/hero-mobile.jpg",
-    photoAlt: "Linen armchair beside a tall window overlooking the bay",
-    rating: 5,
-  },
-  {
-    id: "moreno",
-    quote:
-      "Moving from out of state felt huge. My agent did video tours, explained every neighborhood, and had keys ready the day I landed.",
-    name: "Alyssa Moreno",
-    action: "Rented",
-    city: "Tampa",
-    homeType: "Condo",
+    city: "Oakville",
+    homeType: "Detached home",
     photo: "/images/hero-desktop.jpg",
-    photoAlt: "Sunlit living room with white sofas and ocean views",
+    photoAlt: "Bright modern living room in an Oakville detached home",
     rating: 5,
   },
   {
-    id: "hayes",
+    id: "burlington-buyer",
     quote:
-      "We'd looked at flood maps for months and still felt lost. movewithhelen walked us through insurance, elevation, and docks until we were sure.",
-    name: "Robert and Linda Hayes",
+      "No pressure, honest neighbourhood advice, and we received $5,000 cash-back right after closing. Helen made buying our first home in Burlington completely stress-free.",
+    name: "Priya & Jason K.",
     action: "Bought",
-    city: "Sarasota",
-    homeType: "Waterfront home",
+    city: "Burlington",
+    homeType: "Townhome",
     photo: "/images/hero-mobile.jpg",
-    photoAlt: "Quiet corner with an armchair and a view of the water",
+    photoAlt: "Sunlit living area in a Burlington townhome",
     rating: 5,
   },
   {
-    id: "okafor",
+    id: "hamilton-seller",
     quote:
-      "I wanted something walkable without giving up space. They showed me three townhomes that actually fit, not thirty that didn't.",
-    name: "Nina Okafor",
-    action: "Rented",
-    city: "Naples",
-    homeType: "Townhome",
+      "We were skeptical about 1% commission at first, but Helen delivered full-service marketing, great photography, and strong negotiation from day one.",
+    name: "Mark T.",
+    action: "Sold",
+    city: "Hamilton",
+    homeType: "Detached home",
     photo: "/images/hero-desktop.jpg",
-    photoAlt: "Open-plan living area with doors opening to the sea",
+    photoAlt: "Updated kitchen and dining area in Hamilton",
+    rating: 5,
+  },
+  {
+    id: "niagara-buyer",
+    quote:
+      "Relocating to the Niagara region felt overwhelming until we spoke with Helen. She narrowed down the best pockets quickly and handled every contract condition smoothly.",
+    name: "Elena R.",
+    action: "Bought",
+    city: "Niagara",
+    homeType: "Condo",
+    photo: "/images/hero-mobile.jpg",
+    photoAlt: "Modern condo interior in the Niagara region",
     rating: 5,
   },
 ];
 
 export const reviewStats: ReviewStat[] = [
-  { value: 98, suffix: "%", label: "of clients would recommend movewithhelen" },
-  { value: 21, suffix: " days", label: "average time to find a home" },
-  { value: 600, suffix: "+", label: "five-star reviews" },
+  { value: 14, suffix: "+", label: "years of Ontario real estate experience" },
+  { value: 1, suffix: "%", label: "full-service seller listing commission" },
+  { value: 5000, suffix: "", label: "up to $5,000 buyer cash-back" },
 ];
 
 export const reviewsSection = {
   label: "Client stories",
-  heading: "What our clients say",
+  heading: "What Helen's clients say",
   carouselLabel: "Client reviews",
   slideLabel: (index: number, total: number) => `${index} of ${total}`,
   previous: "Previous review",

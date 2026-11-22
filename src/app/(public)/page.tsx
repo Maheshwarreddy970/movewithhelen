@@ -22,7 +22,6 @@ export default function HomePage() {
       <FeaturedHomes />
       <AboutSection />
       <PropertyTypes />
-      {/* <ServiceArea /> */}
       <LatestProperties />
       <ClientReviews />
       <LatestArticles />

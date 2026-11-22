@@ -1,43 +1,43 @@
-// Fictional data for demo purposes only.
+import { mlsLinks } from "@/data/mls-links";
 
 export type FooterLink = { label: string; href: string };
 
 export type FooterColumn = { title: string; links: FooterLink[] };
 
-// Placeholder photo until /images/cta/cta-home.webp exists. Alt text
-// describes the placeholder.
 export const cta = {
-  heading: "Find a home you'll love coming back to",
-  text: "Tell us what you're looking for, and a local agent will reach out.",
-  button: { label: "Schedule a tour", href: "/contact?type=tour" },
+  heading: "Ready to buy or sell across Halton, Hamilton & Niagara?",
+  text: "List for 1% commission or claim up to $5,000 buyer cash-back—with 14 years of hands-on Ontario real estate experience behind every deal.",
+  button: { label: "Book a Free Consultation", href: "/contact" },
   image: "/images/hero-desktop.jpg",
-  imageAlt: "Bright living room opening onto a deck with sea views",
+  imageAlt: "Modern Ontario home interior",
 };
 
 export const footerColumns: FooterColumn[] = [
   {
-    title: "Pages",
+    title: "Explore",
     links: [
-      { label: "About", href: "/about" },
-      { label: "Properties", href: "/properties" },
-      { label: "Neighborhoods", href: "/neighborhoods" },
-      { label: "Agents", href: "/agents" },
+      { label: "Search Live MLS", href: mlsLinks.allSale },
+      { label: "Featured Listings", href: "/properties" },
+      { label: "Service Areas", href: "/neighborhoods" },
+      { label: "About Helen", href: "/about" },
     ],
   },
   {
-    title: "Resources",
+    title: "Live MLS by City",
     links: [
-      { label: "Guides", href: "/guides" },
-      { label: "Reviews", href: "/#reviews" },
+      { label: "Oakville Homes", href: mlsLinks.citiesSale.oakville },
+      { label: "Burlington Homes", href: mlsLinks.citiesSale.burlington },
+      { label: "Hamilton Homes", href: mlsLinks.citiesSale.hamilton },
+      { label: "Niagara Homes", href: mlsLinks.citiesSale.niagara },
+    ],
+  },
+  {
+    title: "Resources & Legal",
+    links: [
+      { label: "Buyer & Seller Guides", href: "/guides" },
       { label: "FAQ", href: "/faq" },
-      { label: "Contact", href: "/contact" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy policy", href: "/privacy" },
-      { label: "Terms", href: "/terms" },
+      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Terms of Use", href: "/terms" },
     ],
   },
 ];
@@ -48,18 +48,19 @@ export const newsletter = {
   placeholder: "Enter your email",
   button: "Subscribe",
   error: "Enter a valid email address",
-  success: "You're in! Watch your inbox for new listings.",
+  success: "You're in! Watch your inbox for local listings and market updates.",
 };
 
 export const footerBottom = {
-  copyright: "© 2026 movewithhelen. All rights reserved.",
-  contact: "hello@movewithhelen.example.com · (727) 555-0148",
+  copyright:
+    "© 2026 Helen Everett · MoveWithHelen.ca · Sales Representative (License #5032305)",
+  contact: "helen.everett@kw.com · (647) 702-0046",
   disclaimer:
-    "movewithhelen is a fictional company. All listings are for demonstration only.",
-  socialLabel: "Social media",
+    "Keller Williams Referred Urban Realty, Brokerage · 156 Duncan Mill Road, Toronto, ON M3B 3N2 · Office: (416) 572-1016. Each office is independently owned and operated. Not intended to solicit buyers or sellers currently under contract.",
+  socialLabel: "Quick links",
   social: [
-    { label: "Instagram", href: "#" },
-    { label: "Facebook", href: "#" },
-    { label: "YouTube", href: "#" },
+    { label: "KW Profile", href: mlsLinks.home },
+    { label: "Mortgage Calculator", href: mlsLinks.mortgageCalculator },
+    { label: "KW App", href: mlsLinks.downloadApp },
   ] satisfies FooterLink[],
 };

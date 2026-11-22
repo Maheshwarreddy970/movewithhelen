@@ -36,6 +36,18 @@ function SmartLink({
   link: FooterLink;
   className: string;
 }) {
+  if (/^https?:\/\//.test(link.href)) {
+    return (
+      <a
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+      >
+        {link.label}
+      </a>
+    );
+  }
   if (link.href.includes("#")) {
     return (
       <a href={link.href} className={className}>
