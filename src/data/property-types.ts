@@ -1,91 +1,52 @@
-// Fictional data for demo purposes only.
+import { mlsLinks } from "@/data/mls-links";
 
-export type PropertyTypeIcon =
-  | "beach"
-  | "waves"
-  | "building"
-  | "home"
-  | "houses"
-  | "diamond"
-  | "flag"
-  | "key";
-
-export type PropertyTypeItem = {
+export type PropertyCategoryCard = {
   slug: string;
-  href?: string; // defaults to /properties?type=<slug>
   name: string;
-  count: number;
   line: string;
-  icon: PropertyTypeIcon;
+  image: string;
+  imageAlt: string;
+  href: string;
 };
 
-export const propertyTypes: PropertyTypeItem[] = [
+export const propertyTypes: PropertyCategoryCard[] = [
   {
-    slug: "detached-home",
+    slug: "detached-homes",
     name: "Detached Homes",
-    count: 42,
-    line: "Space to grow, near good schools",
-    icon: "home",
+    line: "Family homes across Oakville, Burlington, Hamilton & Niagara",
+    image: "/Detached%20Homes.avif",
+    imageAlt: "Detached family home in Ontario",
+    href: mlsLinks.propertyTypes.detached,
   },
   {
-    slug: "townhome",
+    slug: "townhomes",
     name: "Townhomes",
-    count: 28,
-    line: "More room, less upkeep",
-    icon: "houses",
+    line: "Modern space with lower maintenance",
+    image: "/Townhomes.avif",
+    imageAlt: "Row of modern townhomes",
+    href: mlsLinks.propertyTypes.townhomes,
   },
   {
-    slug: "condo",
-    name: "Condominiums",
-    count: 35,
-    line: "Easy living with great amenities",
-    icon: "building",
+    slug: "condos",
+    name: "Condos",
+    line: "Turnkey living close to transit and amenities",
+    image: "/Condos.avif",
+    imageAlt: "Contemporary condominium building",
+    href: mlsLinks.propertyTypes.condos,
   },
   {
-    slug: "luxury-home",
-    name: "Luxury Homes",
-    count: 12,
-    line: "Premium finishes and upscale living",
-    icon: "diamond",
-  },
-  {
-    slug: "oakville",
-    href: "/communities/oakville",
-    name: "Oakville",
-    count: 24,
-    line: "Upscale neighborhoods and lake views",
-    icon: "waves",
-  },
-  {
-    slug: "burlington",
-    href: "/communities/burlington",
-    name: "Burlington",
-    count: 31,
-    line: "Our primary service area",
-    icon: "beach",
-  },
-  {
-    slug: "hamilton",
-    href: "/communities/hamilton",
-    name: "Hamilton",
-    count: 45,
-    line: "Vibrant communities and great value",
-    icon: "flag",
-  },
-  {
-    slug: "buyer-cashback",
-    href: "/buying",
-    name: "Buyer Cashback",
-    count: 5000,
-    line: "Get up to $5,000 back when buying",
-    icon: "key",
+    slug: "rentals",
+    name: "Rentals",
+    line: "Houses, townhomes, and condos for lease",
+    image: "/Rentals.avif",
+    imageAlt: "Residential rental property",
+    href: mlsLinks.propertyTypes.rentals,
   },
 ];
 
 export const propertyTypesSection = {
-  label: "Browse by type or area",
-  heading: "Start with the kind of home you want",
+  label: "Live MLS Search",
+  heading: "Browse by property type",
   subtext:
-    "Whether you are looking for a detached home in Burlington or a condo in Oakville, explore properties across our service areas.",
-  countUnit: "homes",
+    "Click any category below to search live TRREB & CREA MLS listings directly on Helen's Keller Williams portal.",
 };

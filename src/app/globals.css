@@ -195,7 +195,7 @@
 }
 
 @utility section-y {
-  @apply py-24 md:py-32;
+  @apply py-10 md:py-16 lg:py-24;
 }
 
 /* Type scale, largest to smallest. Clear size steps between levels;

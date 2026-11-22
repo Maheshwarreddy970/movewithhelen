@@ -17,6 +17,8 @@ function LatestProperties() {
   const headingId = useId();
   const reduceMotion = useReducedMotion();
 
+  if (newProperties.length === 0) return null;
+
   return (
     <section aria-labelledby={headingId} className="section-y">
       <div className="page-container">

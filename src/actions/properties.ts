@@ -19,7 +19,7 @@ export type ListedProperty = Property & {
 
 const store = createSeededStore<ListedProperty[]>(
   "movewithhelen-properties",
-  1,
+  2,
   propertiesSeed,
 );
 
