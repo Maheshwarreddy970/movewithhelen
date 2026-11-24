@@ -13,68 +13,69 @@ export type AboutStat = {
 
 export const aboutPage = {
   meta: {
-    title: "About Helen Everett | MoveWithHelen.ca",
+    title: "About Helen Everett | Realtor® · MoveWithHelen.ca",
     description:
-      "Helen Everett is a Sales Representative with Keller Williams Referred Urban Realty with 14 years of Ontario real estate experience, offering 1% seller listing commission and up to $5,000 buyer cash-back across Oakville, Burlington, Hamilton, and Niagara.",
+      "With 14 years of experience in residential and commercial real estate and over 10 years as a Deal Administrator, Helen Everett offers 1% seller listing commission and up to $5,000 buyer cash-back across Oakville, Burlington, Hamilton, and Niagara.",
   },
 
   hero: {
-    heading: "Full-service real estate, without the inflated fees.",
-    text: "14 years of Ontario real estate experience across Oakville, Burlington, Hamilton, and Niagara.",
+    heading: "Helen Everett | Realtor®",
+    text: "14 years of residential and commercial real estate experience across Oakville, Burlington, Hamilton, and Niagara.",
     image: "/images/hero-desktop.jpg",
     imageAlt: "Modern Ontario home interior representing MoveWithHelen",
   },
 
   story: {
     label: "Meet Helen Everett",
-    heading: "Built on 14 years of hands-on real estate experience",
+    heading: "Strategic, detail-oriented guidance at every stage",
     paragraphs: [
-      "Helen Everett began her career in real estate as a Deals Administrator—reviewing contracts, managing timelines, and guiding transactions smoothly to closing behind the scenes.",
-      "That foundation gave her an eye for detail that most agents only learn years later. Today, as a Sales Representative with Keller Williams Referred Urban Realty (License #5032305), she brings that same precision directly to buyers and sellers across Oakville, Burlington, Hamilton, and Niagara.",
-      "MoveWithHelen.ca was built around a simple belief: homeowners shouldn't have to overpay in commission to get full-service marketing, strong negotiation, and personal guidance from day one to closing.",
+      "With 14 years of experience in both residential and commercial real estate, Helen Everett brings a wealth of knowledge and a genuine passion for helping people navigate the buying and selling process.",
+      "Before becoming a Realtor®, Helen spent more than 10 years as a Deal Administrator, working behind the scenes on real estate transactions. This experience gave her a strong understanding of every stage of a deal and just how important the details are. She is naturally a strategic thinker, very detail-oriented, and always looking a few steps ahead to help anticipate challenges and make the process as smooth as possible for her clients.",
+      "Helen believes real estate is about more than just buying or selling a property. It's about building relationships, listening, understanding what matters most to each client, and being there every step of the way. She takes great pride in being approachable, honest, hardworking, and someone her clients can count on.",
+      "When she's not working in real estate, you'll often find Helen volunteering at local animal shelters and helping dog and cat rescue groups. Giving back and helping animals in need is something she is truly passionate about.",
     ],
     image: "/Resizer.jpg",
     imageAlt:
-      "Helen Everett, Sales Representative at Keller Williams Referred Urban Realty",
+      "Helen Everett, Realtor® at Keller Williams Referred Urban Realty",
     quote:
-      "Every contract detail matters—my job is to protect your equity and make your move as smooth as possible.",
+      "Real estate is about more than just buying or selling a property—it's about building relationships, listening, and being there every step of the way.",
     quoteName: "Helen Everett",
-    quoteRole: "Sales Representative · Keller Williams Referred Urban Realty",
+    quoteRole: "Realtor® · Keller Williams Referred Urban Realty",
   },
 
   stats: {
     label: "MoveWithHelen in numbers",
     items: [
-      { value: 14, suffix: "+", label: "Years in Ontario real estate" },
+      { value: 14, suffix: "", label: "Years in residential & commercial real estate" },
+      { value: 10, suffix: "+", label: "Years as a Deal Administrator" },
       { value: 1, suffix: "%", label: "Seller listing commission" },
       { value: 5000, suffix: "", label: "Up to $5,000 buyer cash-back" },
-      { value: 4, suffix: "", label: "Ontario regions served" },
-    ] as AboutStat[],
+    ] satisfies AboutStat[],
   },
 
   values: {
     label: "How Helen works",
-    heading: "Full service, zero shortcuts",
+    heading: "Approachable, honest, and detail-driven",
     items: [
       {
         icon: "honesty",
-        title: "Transparent fees",
-        text: "Just 1% listing commission for sellers and up to $5,000 cash-back for buyers—with zero hidden charges.",
+        title: "Approachable & honest",
+        text: "Clear, straightforward advice at every step—plus 1% seller listing commission and up to $5,000 buyer cash-back.",
       },
       {
         icon: "local",
-        title: "Deep local knowledge",
-        text: "Focused across Oakville, Burlington, Hamilton, and Niagara so you get real neighbourhood insight, not guesswork.",
+        title: "Residential & commercial",
+        text: "14 years of hands-on experience across Oakville, Burlington, Hamilton, and Niagara.",
       },
       {
         icon: "calm",
-        title: "Contract & closing precision",
-        text: "With a background as a Deals Administrator, every clause, condition, and deadline is handled with care.",
+        title: "10+ years in Deal Administration",
+        text: "A strategic, detail-oriented approach that anticipates challenges before they slow down your closing.",
       },
       {
         icon: "after",
-        title: "Direct, personal support",
-        text: "You work directly with Helen from your first conversation to closing day—never handed off to a junior team member.",
+        title: "Relationships first",
+        text: "Listening to what matters most to you and standing beside you from first showing to closing day.",
       },
     ] satisfies { icon: ValueIcon; title: string; text: string }[],
   },
@@ -87,38 +88,38 @@ export const aboutPage = {
     steps: {
       buying: [
         {
-          title: "Share your goals",
-          text: "Tell Helen your budget, preferred neighbourhoods, and must-haves across Halton, Hamilton, or Niagara.",
+          title: "Listen & plan",
+          text: "Share your goals, budget, and preferred neighbourhoods across Oakville, Burlington, Hamilton, or Niagara.",
         },
         {
-          title: "Browse live MLS & tour",
-          text: "Explore live TRREB & CREA listings and tour the homes that truly fit your criteria.",
+          title: "Search live MLS & tour",
+          text: "Browse live TRREB & CREA listings and tour the homes that truly match what matters most to you.",
         },
         {
-          title: "Negotiate with confidence",
-          text: "Get a clear breakdown of comparable sales, conditions, and contract terms before you sign.",
+          title: "Strategic offer & review",
+          text: "Benefit from 10+ years of Deal Administrator experience when reviewing conditions, clauses, and timelines.",
         },
         {
           title: "Close & claim cash-back",
-          text: "Helen manages the closing process and delivers up to $5,000 in buyer cash-back.",
+          text: "Enjoy a smooth closing and receive up to $5,000 in buyer cash-back.",
         },
       ],
       selling: [
         {
           title: "Free home evaluation",
-          text: "Receive a data-backed comparative market analysis based on recent sales in your neighbourhood.",
+          text: "Get a detailed comparative market analysis based on recent sales in your area.",
         },
         {
           title: "Full-service marketing at 1%",
-          text: "Professional photography, MLS exposure, and strategic pricing—all for a 1% listing commission.",
+          text: "Professional photography, MLS exposure, and strategic pricing—all for a 1% seller listing commission.",
         },
         {
-          title: "Showings & strong negotiation",
-          text: "Helen coordinates showings and negotiates every offer to protect your bottom line.",
+          title: "Showings & negotiation",
+          text: "Helen manages showings and negotiates every offer with your bottom line first.",
         },
         {
-          title: "Smooth closing",
-          text: "Every document and closing detail is tracked carefully so you move on your timeline.",
+          title: "Detail-driven closing",
+          text: "Every document and deadline is tracked carefully so you close with confidence.",
         },
       ],
       renting: [
@@ -127,16 +128,16 @@ export const aboutPage = {
           text: "Share your target move-in date, monthly budget, and preferred Ontario city.",
         },
         {
-          title: "Search live MLS rentals",
-          text: "View verified houses, townhomes, and condos for lease through Helen's KW portal.",
+          title: "Browse live MLS rentals",
+          text: "Explore verified houses, townhomes, and condos for lease through Helen's KW portal.",
         },
         {
-          title: "Prepare a strong offer",
-          text: "Get help organizing your credit report, employment letter, and Ontario standard lease paperwork.",
+          title: "Prepare a strong application",
+          text: "Get guidance on credit reports, references, and Ontario standard lease paperwork.",
         },
         {
           title: "Sign & move in",
-          text: "Review every term clearly with Helen and get your keys with confidence.",
+          text: "Review every detail clearly with Helen and get your keys smoothly.",
         },
       ],
     } satisfies Record<ProcessTab, ProcessStep[]>,
@@ -144,31 +145,31 @@ export const aboutPage = {
   },
 
   milestones: {
-    label: "Background",
-    heading: "14 years in Ontario real estate",
+    label: "Experience",
+    heading: "14 years of real estate expertise",
     items: [
       {
         year: 2012,
-        text: "Starts real estate career as a Deals Administrator, mastering contracts and closings",
+        text: "Begins real estate career, spending over 10 years behind the scenes as a Deal Administrator",
       },
       {
-        year: 2018,
-        text: "Expands client representation across Halton and Hamilton regions",
+        year: 2022,
+        text: "Brings deep contract and transaction expertise directly to residential and commercial clients as a Realtor®",
       },
       {
-        year: 2023,
-        text: "Joins Keller Williams Referred Urban Realty, serving Oakville, Burlington, Hamilton & Niagara",
+        year: 2024,
+        text: "Serves buyers and sellers across Oakville, Burlington, Hamilton, and Niagara with Keller Williams Referred Urban Realty",
       },
       {
         year: 2026,
-        text: "Launches MoveWithHelen.ca with 1% Seller Listing Commission & up to $5,000 Buyer Cash-Back",
+        text: "Launches MoveWithHelen.ca featuring 1% Seller Listing Commission & up to $5,000 Buyer Cash-Back",
       },
     ],
   },
 
   team: {
     label: "Work directly with Helen",
-    heading: "One dedicated agent, start to finish",
+    heading: "There every step of the way",
     cta: { label: "Contact Helen", to: "/contact" },
     areas: (areas: string[]) => areas.join(" · "),
   },

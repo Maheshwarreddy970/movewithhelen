@@ -29,10 +29,10 @@ export const agents: Agent[] = [
     id: "a-helen",
     slug: "helen-everett",
     name: "Helen Everett",
-    title: "Sales Representative · Keller Williams Referred Urban Realty",
+    title: "Realtor® · Keller Williams Referred Urban Realty",
     photo: "/Resizer.jpg",
     photoAlt:
-      "Helen Everett, Sales Representative at Keller Williams Referred Urban Realty",
+      "Helen Everett, Realtor® at Keller Williams Referred Urban Realty",
     areas: ["Oakville", "Burlington", "Hamilton", "Niagara"],
     years: 14,
     stat: { value: "1%", label: "seller listing commission" },
@@ -44,25 +44,26 @@ export const agents: Agent[] = [
     specialties: [
       "1% Seller Listing Commission",
       "Up to $5,000 Buyer Cash-Back",
-      "Contracts & Closings",
+      "Residential & Commercial Real Estate",
     ],
     focus: ["buying", "selling", "renting"],
     shortBio:
-      "14 years of Ontario real estate experience—starting as a Deals Administrator—helping buyers and sellers across Oakville, Burlington, Hamilton, and Niagara.",
+      "With 14 years of experience in both residential and commercial real estate—including over 10 years as a Deal Administrator—Helen brings strategic, detail-oriented guidance to every client.",
     bio: [
-      "Helen Everett began her real estate career as a Deals Administrator, giving her deep hands-on expertise in contracts, conditions, timelines, and smooth closings.",
-      "Now a Sales Representative with Keller Williams Referred Urban Realty (License #5032305), Helen helps homeowners sell for a 1% listing commission and offers up to $5,000 buyer cash-back across Oakville, Burlington, Hamilton, and Niagara.",
-      "Every client works directly with Helen from first conversation to closing day.",
+      "With 14 years of experience in both residential and commercial real estate, Helen Everett brings a wealth of knowledge and a genuine passion for helping people navigate the buying and selling process.",
+      "Before becoming a Realtor®, Helen spent more than 10 years as a Deal Administrator, working behind the scenes on real estate transactions. This experience gave her a strong understanding of every stage of a deal and just how important the details are. She is naturally a strategic thinker, very detail-oriented, and always looking a few steps ahead to help anticipate challenges and make the process as smooth as possible for her clients.",
+      "Helen believes real estate is about more than just buying or selling a property. It's about building relationships, listening, understanding what matters most to each client, and being there every step of the way. She takes great pride in being approachable, honest, hardworking, and someone her clients can count on.",
+      "When she's not working in real estate, you'll often find Helen volunteering at local animal shelters and helping dog and cat rescue groups. Giving back and helping animals in need is something she is truly passionate about.",
     ],
     quote:
-      "Every contract detail matters—my job is to protect your equity and make your move as smooth as possible.",
+      "Real estate is about more than just buying or selling a property—it's about building relationships, listening, and being there every step of the way.",
     credentials: [
-      "Sales Representative, Keller Williams Referred Urban Realty (License #5032305)",
-      "14+ years in Ontario real estate",
-      "Former Deals Administrator with deep contract & closing expertise",
+      "Realtor®, Keller Williams Referred Urban Realty (License #5032305)",
+      "14 years in residential and commercial real estate",
+      "10+ years of experience as a Deal Administrator",
     ],
     funFact:
-      "Also runs DoggieTeethCleaning.ca and loves helping local pet owners find homes with yards and trails.",
+      "Volunteers at local animal shelters and helps dog and cat rescue groups in her spare time.",
   },
 ];
 

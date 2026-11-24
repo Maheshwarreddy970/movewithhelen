@@ -25,10 +25,10 @@ type AboutContent = {
 };
 
 export const about: AboutContent = {
-  label: "About Helen Everett",
-  heading: "14 Years of Real Estate Experience",
+  label: "Helen Everett | Realtor®",
+  heading: "14 Years of Residential & Commercial Experience",
   subtext:
-    "Starting her career as a Deals Administrator before becoming a Sales Representative with Keller Williams Referred Urban Realty, Helen brings deep contract and closing expertise across Oakville, Burlington, Hamilton, and Niagara.",
+    "Before becoming a Realtor®, Helen spent more than 10 years as a Deal Administrator—giving her a strategic, detail-oriented edge at every stage of your transaction across Oakville, Burlington, Hamilton, and Niagara.",
   features: [
     {
       id: "sell",
@@ -43,11 +43,12 @@ export const about: AboutContent = {
       text: "Receive up to $5,000 in cash back when you purchase your next home with Helen across Oakville, Burlington, Hamilton, or Niagara.",
     },
   ],
-  mainImage: "/images/hero-desktop.jpg",
-  mainImageAlt: "Helen Everett, Sales Representative at Keller Williams Referred Urban Realty",
+  mainImage: "/Resizer.jpg",
+  mainImageAlt:
+    "Helen Everett, Realtor® at Keller Williams Referred Urban Realty",
   stats: [
+    { value: 14, suffix: "", label: "Years in real estate" },
+    { value: 10, suffix: "+", label: "Years as Deal Administrator" },
     { value: 1, suffix: "%", label: "Seller listing commission" },
-    { value: 5000, suffix: "", label: "Up to $5,000 buyer cash-back" },
-    { value: 14, suffix: "+", label: "Years in Ontario real estate" },
   ],
 };
