@@ -153,7 +153,6 @@ export default function AboutView() {
                 <CountUp
                   value={stat.value}
                   suffix={stat.suffix}
-                  decimals={stat.decimals}
                 />
               </dd>
             </div>
